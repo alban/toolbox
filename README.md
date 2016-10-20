@@ -1,4 +1,4 @@
 ```
-sudo docker run --privileged --pid=host --net=host -ti albanc/toolbox
+sudo docker run --privileged --pid=host --net=host -ti --rm albanc/toolbox
 ```
 
