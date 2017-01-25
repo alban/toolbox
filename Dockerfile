@@ -21,6 +21,10 @@ RUN dnf update -y && \
 		git-all \
 		conntrack-tools \
 		busybox \
+		llvm \
+		clang \
+		kernel-debug \
+		kernel-devel \
 		&& \
 	mkdir $GOPATH && \
 	go get github.com/derekparker/delve/cmd/dlv
