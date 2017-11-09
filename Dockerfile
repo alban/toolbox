@@ -1,5 +1,5 @@
 FROM fedora:latest
-ENV GOPATH=/gopath PATH=$PATH:$GOPATH/bin
+ENV GOPATH=/go PATH=$PATH:$GOPATH/bin
 RUN dnf update -y && \
 	dnf groupinstall -y "C Development Tools and Libraries" && \
 	dnf install -y \
@@ -25,7 +25,10 @@ RUN dnf update -y && \
 		clang \
 		kernel-debug \
 		kernel-devel \
+		which \
 		&& \
-	mkdir $GOPATH && \
-	go get github.com/derekparker/delve/cmd/dlv
+	mkdir $GOPATH
+
+#go get github.com/derekparker/delve/cmd/dlv
+
 CMD [ "/usr/bin/sh" ]
