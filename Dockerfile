@@ -30,6 +30,7 @@ RUN dnf update -y && \
 		openssl \
 		groff-base \
 		openssh \
+		unzip \
 		&& \
 	wget -O /tmp/awscli-bundle.zip https://s3.amazonaws.com/aws-cli/awscli-bundle.zip && \
 	unzip -d /tmp/ /tmp/awscli-bundle.zip && \
