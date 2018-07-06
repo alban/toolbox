@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: unprivileged-pod
+  labels:
+    k8s-app: unprivileged-pod
+spec:
+  selector:
+    matchLabels:
+      name: unprivileged-pod
+  template:
+    metadata:
+      labels:
+        name: unprivileged-pod
+    spec:
+      containers:
+      - name: unprivileged-pod
+        image: docker.io/albanc/toolbox
+        command: [ "sleep", "100000" ]
